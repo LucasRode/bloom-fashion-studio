@@ -1,0 +1,153 @@
+/* Site Cinematográfico · © 2026 Labrego IA · LBG-SC-2026-v1 */
+/* ══════════════ Bloom Fashion Studio ══════════════ */
+body::after { opacity: .05; }
+h1, h2 { font-weight: 300; letter-spacing: -.005em; }
+h1 { font-size: clamp(40px, 6vw, 92px); line-height: 1.02; }
+h2 { font-size: clamp(34px, 4.4vw, 66px); }
+h3 { font-family: var(--fonte-titulo); font-weight: 500; font-size: clamp(24px, 2vw, 30px); }
+.painel { box-shadow: 0 1px 0 rgb(255 255 255 / .6) inset; }
+.menu { gap: 24px; }
+.menu-cta { background: var(--cafe); color: var(--acento-texto); border-color: var(--cafe); cursor: pointer; }
+.botoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.momento--centro .botoes { justify-content: center; }
+.botao { border-radius: 2px; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+.botao--linha { background: transparent; color: var(--cafe); box-shadow: inset 0 0 0 1px var(--cafe); }
+.botao--linha:hover { background: var(--cafe); color: var(--acento-texto); filter: none; }
+.apoio { color: var(--texto-suave); letter-spacing: .02em; }
+.assinatura-bruna { font-family: var(--fonte-titulo); font-style: italic; font-size: 26px; color: var(--cafe); margin-top: 8px; }
+.endereco-curto { font-size: 14px; letter-spacing: .04em; color: var(--cafe); }
+.secao > .arte--direita.arte--retrato { width: 52vw; object-position: center 20%; }
+.arte--foto { mix-blend-mode: normal; opacity: .95; }
+.secao a:not(.botao) { color: var(--cafe); }
+
+/* Títulos como créditos de filme: entram ganhando foco */
+.revelar h2 { opacity: 0; letter-spacing: .04em; filter: blur(4px); transition: opacity 1.2s var(--ease) .15s, letter-spacing 1.6s var(--ease) .15s, filter 1.2s var(--ease) .15s; }
+.revelar.visto h2 { opacity: 1; letter-spacing: -.005em; filter: none; }
+
+/* ── 02 Arara: rolagem horizontal presa, serviço do centro em foco ───── */
+.arara { position: relative; height: 420vh; }
+.arara-palco { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; grid-template-rows: auto 1fr; align-items: center; gap: 2vh; padding: 84px 0 2vh; }
+.arara-cabecalho { margin: 0 var(--gutter); max-width: 760px; padding: clamp(20px, 2.4vw, 34px); align-self: start; }
+.arara-cabecalho h2 { font-size: clamp(26px, 2.8vw, 42px); margin-bottom: .3em; }
+.arara-cabecalho p { font-size: 15px; }
+.arara-cabecalho p { margin: 0; }
+.arara-trilho { position: relative; display: flex; align-items: flex-start; gap: clamp(24px, 4vw, 64px); width: max-content; padding: 0 calc(50vw - min(30vw, 170px)); will-change: transform; }
+.arara-trilho::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, transparent, #b9b2a9 4%, #d9d3cb 50%, #b9b2a9 96%, transparent); }
+.cabide { flex: 0 0 min(64vw, 320px); justify-items: center; display: grid; gap: 12px; padding-top: 14px; transform-origin: 50% 0; }
+.cabide::before { content: ""; justify-self: center; width: 2px; height: 22px; margin-top: -14px; background: #b9b2a9; }
+.arte.arte--cabide { position: relative; z-index: auto; width: 100%; aspect-ratio: 3 / 4; height: auto; max-height: 30vh; object-fit: cover; mix-blend-mode: multiply; }
+.cabide-texto { padding: 18px 22px; }
+.cabide-texto h3 { margin-bottom: .3em; }
+.cabide-texto p { font-size: 15px; margin-bottom: 0; }
+.cabide-texto .rotulo { margin-bottom: 6px; font-family: var(--fonte-titulo); font-size: 18px; letter-spacing: .1em; text-transform: none; }
+.cabide--fim { align-self: center; }
+.cabide--fim::before { display: none; }
+.cabide--fim .cabide-texto { text-align: center; }
+.cabide--fim .botao { margin-top: 18px; }
+
+/* Fotos em cartão: bordas que somem no fundo (sem canto nem linha reta) */
+.arte.arte--cabide, .arte.arte--galeria, .arte.arte--colecao, .arte.arte--insta {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 72%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 72%, transparent);
+  -webkit-mask-composite: source-in; mask-composite: intersect; }
+.arte.arte--colecao { -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 88%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 6%, #000 88%, transparent); }
+.cabide-texto { width: 100%; }
+
+/* ── Mergulho no tecido ───────────────────────────────────────────── */
+.mergulho { position: relative; height: 300vh; }
+.mergulho-palco { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.mergulho .arte { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: normal; will-change: transform, opacity; }
+.mergulho-arara { transform-origin: 62% 58%; }
+.mergulho-trama { opacity: 0; }
+.mergulho-texto { position: absolute; inset: auto var(--gutter) 14vh; display: flex; justify-content: center; z-index: 2; opacity: 0; transform: translateY(20px); transition: opacity .8s var(--ease), transform .9s var(--ease); }
+.mergulho-texto.ativo { opacity: 1; transform: none; }
+.mergulho-veu { position: absolute; inset: 0; z-index: 3; background: var(--fundo); opacity: 1; pointer-events: none; }
+
+/* ── 03 Studio: texto + galeria de fotos reais ─────────────────────── */
+.arte.arte--galeria, .arte.arte--colecao, .arte.arte--insta { position: relative; z-index: auto; width: 100%; height: auto; mix-blend-mode: normal; }
+.studio-grade { width: 100%; max-width: var(--largura); display: grid; grid-template-columns: minmax(0, 480px) 1fr; gap: clamp(20px, 3vw, 48px); align-items: center; }
+.galeria { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; height: min(78vh, 720px); }
+.galeria .arte.arte--galeria { height: 100%; object-fit: cover; }
+.galeria--alta { grid-row: span 2; }
+
+/* ── 04 Coleções ──────────────────────────────────────────────────── */
+.colecoes { width: 100%; max-width: var(--largura); display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.colecao { position: relative; display: block; text-decoration: none; overflow: hidden; }
+.arte--colecao { aspect-ratio: 3 / 4; object-fit: cover; transition: transform 1.4s var(--ease);
+}
+.colecao:hover .arte--colecao { transform: scale(1.06); }
+.colecao-nome { position: absolute; left: 12%; right: 12%; bottom: 10%; padding: 12px 14px; font-family: var(--fonte-titulo); font-size: 21px; line-height: 1.15; color: var(--texto); display: grid; gap: 6px; text-align: center; }
+.colecao-nome em { font: 500 11px/1 var(--fonte-texto); letter-spacing: .18em; text-transform: uppercase; font-style: normal; color: var(--rose-escuro); }
+
+/* ── 05 Depoimentos ───────────────────────────────────────────────── */
+.selo { display: inline-flex; gap: 10px; align-items: center; font-size: 14px; letter-spacing: .04em; text-decoration: none; }
+.selo span { color: #b8894a; letter-spacing: .1em; }
+.depoimentos { width: 100%; max-width: var(--largura); display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 18px; }
+.depoimento { margin: 0; }
+.depoimento blockquote { margin: 0 0 18px; font-family: var(--fonte-titulo); font-size: clamp(20px, 1.6vw, 25px); line-height: 1.4; color: var(--texto); }
+.depoimento figcaption { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--rose-escuro); }
+
+/* ── 06 Como comprar ──────────────────────────────────────────────── */
+.comprar { width: 100%; max-width: var(--largura); display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.beneficios { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 10px; }
+.beneficios li { padding-left: 18px; position: relative; color: var(--texto-suave); }
+.beneficios li::before { content: ""; position: absolute; left: 0; top: .8em; width: 8px; height: 1px; background: var(--rose-escuro); }
+.beneficios strong { color: var(--cafe); letter-spacing: .06em; }
+
+/* ── 07 Instagram ─────────────────────────────────────────────────── */
+.insta { width: 100%; max-width: var(--largura); display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.insta a { display: block; overflow: hidden; }
+.arte--insta { aspect-ratio: 4 / 5; object-fit: cover; transition: transform 1s var(--ease), opacity .4s; opacity: .92; }
+.insta a:hover .arte--insta { transform: scale(1.05); opacity: 1; }
+
+/* ── 08 Contato ───────────────────────────────────────────────────── */
+.contato-grade { width: 100%; max-width: var(--largura); display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px; align-items: start; }
+.painel--form { max-width: none; }
+.painel--local p { color: var(--texto-suave); }
+.mapa { margin-top: 18px; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 4px; filter: grayscale(.6) sepia(.15); }
+.mapa iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* ── Rodapé ───────────────────────────────────────────────────────── */
+.rodape-painel { display: grid; grid-template-columns: auto 1fr auto; gap: 20px 40px; align-items: center; }
+.rodape-logo { height: 34px; width: auto; mix-blend-mode: multiply; }
+.rodape-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.rodape-links a { text-decoration: none; color: var(--texto-suave); }
+.rodape-links a:hover { color: var(--cafe); }
+.rodape-fim { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; border-top: 1px solid var(--linha); padding-top: 16px; font-size: 13px; }
+
+@media (max-width: 980px) {
+  .colecoes { grid-template-columns: 1fr 1fr; }
+  .depoimentos, .comprar, .contato-grade { grid-template-columns: 1fr; }
+  .insta { grid-template-columns: repeat(3, 1fr); }
+  .rodape-painel { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  .secao > .arte--direita.arte--retrato { width: 100%; height: 62%; opacity: .5; }
+  .arara-palco { padding-top: 76px; }
+  .arara-cabecalho p { display: none; }
+  .arte.arte--cabide { max-height: 30vh; }
+  .studio-grade { grid-template-columns: 1fr; }
+  .galeria { height: 110vw; max-height: 640px; gap: 8px; }
+  .cabide-texto p { font-size: 14px; }
+  .colecao-nome { font-size: 17px; left: 6%; right: 6%; padding: 10px; }
+  .menu { gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arara, .mergulho { height: auto; }
+  .arara-palco { position: relative; height: auto; }
+  .arara-trilho { overflow-x: auto; width: auto; padding: 0 var(--gutter); }
+  .mergulho-palco { position: relative; }
+  .mergulho-veu { display: none; }
+  .revelar h2 { opacity: 1; filter: none; }
+}
+
+/* Ajustes de celular */
+.arara-palco { grid-template-columns: minmax(0, 1fr); }
+.arara-trilho { justify-self: start; }
+@media (max-width: 860px) {
+  .momento.momento--centro { left: var(--gutter); right: var(--gutter); width: auto; transform: translateY(24px); }
+  .momento.momento--centro.ativo { transform: none; }
+  .arara-cabecalho { margin: 0 var(--gutter); }
+  .arara-cabecalho h2 { font-size: 26px; }
+}
